@@ -1,0 +1,12 @@
+services:
+  raindrop-backup-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: raindrop-backup-dev
+    restart: unless-stopped
+    volumes:
+      - .:/app
+      - ./data:/app/data
+    env_file:
+      - .env

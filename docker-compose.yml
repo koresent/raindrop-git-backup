@@ -1,0 +1,8 @@
+services:
+  raindrop-backup:
+    image: ghcr.io/koresent/raindrop-git-backup:latest
+    container_name: raindrop-backup
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./data:/app/data
